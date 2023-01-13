@@ -1,0 +1,152 @@
+body {
+    margin: 0;
+    border: 0;
+}
+
+.page {
+    position: relative;
+    z-index: 100;
+}
+
+.header {
+    width: 100vw;
+    height: 100px;
+    text-align: center;
+    background-color: rgba(166, 181, 238, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.library {
+    background-color: rgba(222, 222, 222, 0.3);
+    height: 100vh;
+    position: relative;
+}
+
+.new {
+    display: flex;
+    justify-content: center;
+    width: 100vw;
+    height: 4rem;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+
+.new button {
+    border: none;
+    background-color: white;
+    height: 2rem;
+    border-radius: .75rem;
+    padding: 1rem;
+    background-color: rgba(222, 222, 222);
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+#bookshelf {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    padding-left: 5rem;
+    padding-right: 5rem;
+    justify-items: center;
+    gap: 5rem;
+}
+
+.book {
+    background-color: rgba(130, 179, 229, 0.3);
+    width: 20rem;
+    height: 15rem;
+    text-align: center;
+    border: solid black;
+    border-radius: .75rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.checkReadResult {
+    width: 15rem;
+    height: 3rem;
+    border-radius: .75rem;
+    border: none;
+    cursor: pointer;
+}
+
+.deleteBook {
+    width: 15rem;
+    height: 3rem;
+    border-radius: .75rem;
+    border: none;
+    cursor: pointer;
+    background-color: rgba(194, 194, 194, 0.8);
+}
+
+
+.formPopup {
+    display: none;
+}
+
+.formPopup.show {
+    display: block;
+}
+
+.blocker {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    content: '';
+    background: rgba(0, 0, 0, .5);
+}
+
+.formPage {
+    background-color: rgba(130, 179, 229);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 40vh;
+    width: 25rem;
+    gap: 1rem;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    border: solid black;
+    border-radius: .75rem;
+    z-index: 1000;
+}
+
+.formContent {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.formContent input,
+.formContent button {
+    border-radius: .25rem;
+    height: 2rem;
+}
+
+#formButton {
+    cursor: pointer;
+}
+
+.checkReadSection {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.checkReadSection input {
+    width: 1rem;
+    height: 1rem;
+}

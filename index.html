@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="external.js" defer></script>
+</head>
+<body>
+    <div id="page">
+        <div class="header">Welcome to Your Personal Library</div>
+        <div class="library">
+            <div class="new">
+                <button id="addButton" onclick="showForm()">+ Add Book</button>
+            </div>
+            <div id="bookshelf">
+            </div>
+        </div>
+        <div class="formPopup">
+            <div class="blocker" onclick="hideForm()"></div>
+            <div class="formPage">Add new book
+                <form id="bookForm" onsubmit="submitForm(event)">
+                    <div class="formContent">
+                        <input class="input" id="title" type="text" placeholder="Title" required="true">
+                        <input class="input" id="author" type="text" placeholder="Author" required="true">
+                        <input class="input" id="pages" type="number" placeholder="How many pages?" required="true">
+                        <div class="checkReadSection">Have you read it?
+                            <input class="input" id="checkRead" type="checkbox">
+                        </div>
+                        <button class="input" id="formButton" type="submit">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
