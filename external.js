@@ -23,6 +23,7 @@ let titleResult = '';
 let authorResult = '';
 let pagesResult = '';
 let checkBoxResult = '';
+let library = [];
 
 function submitForm(event) {
     //get values of form submission
@@ -35,52 +36,9 @@ function submitForm(event) {
     const checkBox = document.querySelector('#checkRead');
     checkBoxResult = checkBox.checked;
 
-    //create new book object
+    //create new book object and add to library
     let newBookObject = new Book(titleResult, authorResult, pagesResult, checkBoxResult);
-
     library.push(newBookObject);
-
-
-    //create new book div
-    /*const bookShelf = document.querySelector('#bookshelf');
-    const newBook = document.createElement('div');
-    newBook.classList.add('book');
-    bookShelf.appendChild(newBook);
-
-    const bookTitle = document.createElement('div');
-    bookTitle.textContent = `"${title.value}"`;
-    newBook.appendChild(bookTitle);
-
-    const bookAuthor = document.createElement('div');
-    bookAuthor.textContent = author.value;
-    newBook.appendChild(bookAuthor);
-
-    const bookPages = document.createElement('div');
-    bookPages.textContent = `${pages.value} pages`;
-    newBook.appendChild(bookPages);
-
-    //read or not read button
-    const bookCheckRead = document.createElement('button');
-    bookCheckRead.classList.add('checkReadResult');
-    bookCheckRead.setAttribute("onclick", "readBook()");
-    if (checkBox.checked === true) {
-        bookCheckRead.style.backgroundColor = "rgba(163, 250, 165, 0.8)";
-        bookCheckRead.textContent = "Read";
-    }
-    else if (checkBox.checked === false) {
-        bookCheckRead.style.backgroundColor = "rgba(250, 163, 163, 0.8)";
-        bookCheckRead.textContent = "Not Read";
-    }
-    newBook.appendChild(bookCheckRead);
-
-    //delete button
-    const deleteBook = document.createElement('button');
-    deleteBook.textContent = "Remove";
-    deleteBook.classList.add('deleteBook');
-    deleteBook.setAttribute("onclick", "deleteBook()");
-    newBook.appendChild(deleteBook);*/
-
-    //adding book to library
 
     //hide form upon submission and prevent refresh of page
     hideForm();
@@ -98,18 +56,6 @@ function readBook(event) {
         event.target.style.backgroundColor = "rgba(163, 250, 165, 0.8)";
         event.target.textContent = "Read";
     }
-}
-
-//function toggle book's read status on Book prototype instance
-
-
-let library = [];
-let libraryIndex = 0;
-if (library.length === 0) {
-    libraryIndex = 0;
-}
-else {
-    libraryIndex = library.length - 1;
 }
 
 function Book(title, author, pages, read) {
@@ -164,17 +110,4 @@ function deleteBook(event) {
     event.target.parentElement.remove();
 }
 
-function addBookToLibrary(...args) {
-    library.push(...args);
-    console.log(library);
-}
 
-function displayBook() {
-    const bookShelf = document.querySelector('#bookshelf');
-    for (let i = 0; i < library.length; i++) {
-        const newBook = document.createElement('div');
-        newBook.classList.add('book');
-        newBook.textContent = library[i];
-        bookShelf.appendChild(newBook);
-    }
-}
