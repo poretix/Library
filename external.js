@@ -67,7 +67,7 @@ function Book(title, author, pages, read) {
     //create new book div
     const bookShelf = document.querySelector('#bookshelf');
     const newBook = document.createElement('div');
-    newBook.setAttribute("id", "newBook1");
+    newBook.setAttribute("id", "newBook");
     newBook.classList.add('book');
     bookShelf.appendChild(newBook);
 

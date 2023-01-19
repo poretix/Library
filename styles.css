@@ -1,6 +1,7 @@
 body {
     margin: 0;
     border: 0;
+    font-family: 'open_sansregular';
 }
 
 .page {
@@ -16,6 +17,8 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    font-size: 2rem;
+    font-weight: bold;
 }
 
 .library {
@@ -36,13 +39,20 @@ body {
 .new button {
     border: none;
     background-color: white;
-    height: 2rem;
+    height: 3rem;
     border-radius: .75rem;
     padding: 1rem;
     background-color: rgba(222, 222, 222);
     display: flex;
     align-items: center;
     cursor: pointer;
+    font-size: 1.25rem;
+}
+
+
+#addButton, #formButton {
+    font-family: 'open_sansregular';
+    font-weight: bold;
 }
 
 #bookshelf {
@@ -56,19 +66,21 @@ body {
 
 .book {
     background-color: rgba(130, 179, 229, 0.3);
-    width: 20rem;
+    width: 25rem;
     height: 15rem;
     text-align: center;
-    border: solid black;
-    border-radius: .75rem;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    border-radius: .5rem;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
+    font-size: 1.25rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
 }
 
 .checkReadResult {
-    width: 15rem;
     height: 3rem;
     border-radius: .75rem;
     border: none;
@@ -76,12 +88,18 @@ body {
 }
 
 .deleteBook {
-    width: 15rem;
     height: 3rem;
     border-radius: .75rem;
     border: none;
     cursor: pointer;
     background-color: rgba(194, 194, 194, 0.8);
+}
+
+.checkReadResult,
+.deleteBook {
+    font-family: 'open_sansregular';
+    font-size: 1.25rem;
+    width: 90%;
 }
 
 
@@ -103,6 +121,13 @@ body {
     background: rgba(0, 0, 0, .5);
 }
 
+input {
+   font-family: 'open_sansregular';
+   width: 15rem;
+   font-size: 1rem;
+   font-weight: bold;
+}
+
 .formPage {
     background-color: rgba(130, 179, 229);
     display: flex;
@@ -110,7 +135,7 @@ body {
     justify-content: center;
     align-items: center;
     height: 40vh;
-    width: 25rem;
+    width: 20rem;
     gap: 1rem;
     position: fixed;
     top: 0;
@@ -121,6 +146,8 @@ body {
     border: solid black;
     border-radius: .75rem;
     z-index: 1000;
+    font-size: 1.5rem;
+    font-weight: bold;
 }
 
 .formContent {
@@ -131,12 +158,16 @@ body {
 
 .formContent input,
 .formContent button {
-    border-radius: .25rem;
-    height: 2rem;
+    border-radius: .35rem;
+    height: 3rem;
 }
 
 #formButton {
     cursor: pointer;
+    background-color: rgba(166, 181, 238, 0.8);
+    border: 1px solid rgba(166, 181, 238, 1);
+    font-size: 1rem;
+    height: 3rem;
 }
 
 .checkReadSection {
@@ -144,9 +175,11 @@ body {
     align-items: center;
     justify-content: center;
     gap: 1rem;
+    font-size: 1rem;
 }
 
 .checkReadSection input {
     width: 1rem;
     height: 1rem;
 }
+
