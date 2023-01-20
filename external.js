@@ -49,11 +49,11 @@ function submitForm(event) {
 function readBook(event) {
     /*const bookCheckRead = document.querySelector(".checkReadResult");*/
     if (event.target.textContent === "Read") {
-        event.target.style.backgroundColor = "rgba(250, 163, 163, 0.8)";
+        event.target.style.backgroundColor = "rgba(250, 163, 163, 0.6)";
         event.target.textContent = "Not Read";
     }
     else if (event.target.textContent === "Not Read") {
-        event.target.style.backgroundColor = "rgba(163, 250, 165, 0.8)";
+        event.target.style.backgroundColor = "rgba(163, 250, 165, 0.6)";
         event.target.textContent = "Read";
     }
 }
@@ -88,13 +88,16 @@ function Book(title, author, pages, read) {
     bookCheckRead.classList.add('checkReadResult');
     bookCheckRead.setAttribute("onclick", "readBook(event)");
     if (this.read === true) {
-        bookCheckRead.style.backgroundColor = "rgba(163, 250, 165, 0.8)";
+        bookCheckRead.style.backgroundColor = "rgba(163, 250, 165, 0.6)";
         bookCheckRead.textContent = "Read";
     }
     else if (this.read === false) {
-        bookCheckRead.style.backgroundColor = "rgba(250, 163, 163, 0.8)";
+        bookCheckRead.style.backgroundColor = "rgba(250, 163, 163, 0.6)";
         bookCheckRead.textContent = "Not Read";
     }
+
+    bookCheckRead.addEventListener("mouseover", hoverOpacity);
+    bookCheckRead.addEventListener("mouseout", offOpacity);
     newBook.appendChild(bookCheckRead);
 
     //delete button
@@ -110,4 +113,22 @@ function deleteBook(event) {
     event.target.parentElement.remove();
 }
 
+function hoverOpacity() {
+    const bookCheckRead = document.querySelector(".checkReadResult");
+    if (bookCheckRead.textContent === "Read") {
+        bookCheckRead.style.backgroundColor = "rgba(163, 250, 165)"
+    }
+    else if (bookCheckRead.textContent === "Not Read") {
+        bookCheckRead.style.backgroundColor = "rgba(250, 163, 163)"; 
+    }
+}
 
+function offOpacity() {
+    const bookCheckRead = document.querySelector(".checkReadResult");
+    if (bookCheckRead.textContent === "Read") {
+        bookCheckRead.style.backgroundColor = "rgba(163, 250, 165, 0.6)"
+    }
+    else if (bookCheckRead.textContent === "Not Read") {
+        bookCheckRead.style.backgroundColor = "rgba(250, 163, 163, 0.6)";
+    }
+}
