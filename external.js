@@ -113,22 +113,20 @@ function deleteBook(event) {
     event.target.parentElement.remove();
 }
 
-function hoverOpacity() {
-    const bookCheckRead = document.querySelector(".checkReadResult");
-    if (bookCheckRead.textContent === "Read") {
-        bookCheckRead.style.backgroundColor = "rgba(163, 250, 165)"
+function hoverOpacity(event) {
+    if (event.target.textContent === "Read") {
+        event.target.style.backgroundColor = "rgba(163, 250, 165)"
     }
-    else if (bookCheckRead.textContent === "Not Read") {
-        bookCheckRead.style.backgroundColor = "rgba(250, 163, 163)"; 
+    else if (event.target.textContent === "Not Read") {
+        event.target.style.backgroundColor = "rgba(250, 163, 163)"; 
     }
 }
 
-function offOpacity() {
-    const bookCheckRead = document.querySelector(".checkReadResult");
-    if (bookCheckRead.textContent === "Read") {
-        bookCheckRead.style.backgroundColor = "rgba(163, 250, 165, 0.6)"
+function offOpacity(event) {
+    if (event.target.textContent === "Read") {
+        event.target.style.backgroundColor = "rgba(163, 250, 165, 0.6)"
     }
-    else if (bookCheckRead.textContent === "Not Read") {
-        bookCheckRead.style.backgroundColor = "rgba(250, 163, 163, 0.6)";
+    else if (event.target.textContent === "Not Read") {
+        event.target.style.backgroundColor = "rgba(250, 163, 163, 0.6)";
     }
 }
